@@ -22,7 +22,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+E.g.,
+```bash
+$ bundle exec remote_overflow_reporter -l "San Francisco, CA" -r 20 -R -L5
+ category                     | count | appearance %
+------------------------------+-------+--------------
+ javascript                   | 79    | 30%
+ c#                           | 36    | 14%
+ ruby-on-rails                | 36    | 14%
+ python                       | 34    | 13%
+ php                          | 30    | 11%
+
+total number of listings: 263
+displaying top 5 listings
+```
+
+For detailed usage instructions, run the following command:
+
+    $ bundle exec remote_overflow_reporter --help
 
 ## Development
 
