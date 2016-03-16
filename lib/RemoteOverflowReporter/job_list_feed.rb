@@ -3,19 +3,26 @@ module RemoteOverflowReporter
   class JobListFeed
     attr_reader :listings, :url
 
+    QUERY_PARAM_KEYS = [:allowsremote, :distanceUnits, :location, :range]
+
     def initialize(params)
       @url        = params[:url]
       @listings   = params[:listings] || fetch_listings
     end
 
-    def self.build_from_query_params(query_params)
-      self.new(url: build_url(query_params))
+    def self.build_from_options(job_list_options)
+      query_params = extract_query_params_from_options(job_list_options)
+      self.new(url: build_url(query_params), query_params: query_params)
     end
 
   private
     def self.build_url(params)
       query   = URI.encode_www_form(params)
       URI::HTTP.build(host: "careers.stackoverflow.com", path: "/jobs/feed", query: query)
+    end
+
+    def self.extract_query_params_from_options(job_list_options)
+      job_list_options.options.clone.keep_if { |k,_| QUERY_PARAM_KEYS.include? k }
     end
 
     def fetch_listings

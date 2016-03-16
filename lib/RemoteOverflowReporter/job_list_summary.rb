@@ -1,11 +1,18 @@
 module RemoteOverflowReporter
 
   class JobListSummary
-    attr_reader :feed, :limit
+    attr_reader :listings, :limit
+
+    SUMMARY_PARAM_KEYS = [:limit, :listings]
 
     def initialize(params)
-      @feed   = params[:feed]
-      @limit  = params[:limit]
+      @listings = params[:listings]
+      @limit    = params[:limit]
+    end
+
+    def self.build_from_options(job_list_options)
+      summary_params = extract_summary_params_from_options(job_list_options)
+      self.new(summary_params)
     end
 
     def print_category_stats
@@ -15,11 +22,15 @@ module RemoteOverflowReporter
     end
 
   private
+    def self.extract_summary_params_from_options(job_list_options)
+      job_list_options.options.clone.keep_if { |k,_| SUMMARY_PARAM_KEYS.include? k }
+    end
+
     def category_map
       @category_map ||= begin
         default_map = Hash.new { |h, k| h[k] = 0 }
 
-        feed.listings.reduce(default_map) do |hash, listing|
+        listings.reduce(default_map) do |hash, listing|
           listing.categories.each { |tag| hash[tag] += 1 }
           hash
         end
@@ -35,7 +46,7 @@ module RemoteOverflowReporter
     end
 
     def listing_count
-      @listing_count ||= feed.listings.size * 1.0
+      @listing_count ||= listings.size * 1.0
     end
 
     def calc_listing_appearance_percentage(count)

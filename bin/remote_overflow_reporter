@@ -1,38 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'optparse'
 require 'RemoteOverflowReporter'
 
-query_params   = {}
-summary_params = {}
-
-OptionParser.new do |opts|
-  opts.banner = "Usage: report.rb [options]"
-
-  opts.on("-lLOCATION", "--location=LOCATION", "Location query value") do |lo|
-    query_params[:location] = lo
-  end
-
-  opts.on("-rRANGE", "--range=RANGE", "Range (in miles) query value") do |r|
-    query_params[:range] = r
-    query_params[:distanceUnits] = "Miles"
-  end
-
-  opts.on("-R", "--remote", "'Allows Remote' query flag") do
-    query_params[:allowsremote] = true
-  end
-
-  opts.on("-LLIMIT", "--limit=LIMIT", "Limit applied to results") do |li|
-    limit = li.to_i
-    summary_params[:limit] = limit if limit > 0
-  end
-
-  opts.on("-h", "--help", "Print options help") do
-    puts opts
-    exit
-  end
-
-end.parse!
-
-summary_params[:feed] = RemoteOverflowReporter::JobListFeed.build_from_query_params(query_params)
-RemoteOverflowReporter::JobListSummary.new(summary_params).print_category_stats
+options  = RemoteOverflowReporter::JobListOptions.build_from_command_line_options
+listings = RemoteOverflowReporter::JobListFeed.build_from_options(options).listings
+options.add_params(listings: listings)
+RemoteOverflowReporter::JobListSummary.build_from_options(options).print_category_stats
