@@ -3,7 +3,7 @@ module RemoteOverflowReporter
   class JobListFeed
     attr_reader :listings, :url
 
-    QUERY_PARAM_KEYS = [:allowsremote, :distanceUnits, :location, :range]
+    QUERY_PARAM_KEYS = [:allowsremote, :distanceUnits, :location, :range, :searchTerm]
 
     def initialize(params)
       @url        = params[:url]

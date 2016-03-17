@@ -33,6 +33,10 @@ module RemoteOverflowReporter
           parsed_options.add_params(limit: limit) if limit > 0
         end
 
+        opts.on("-sSEARCHTERM", "--searchterm=SEARCHTERM", "Search term used to filter query") do |st|
+          parsed_options.add_params(searchTerm: st)
+        end
+
         opts.on("-h", "--help", "Print options help") do
           puts opts
           exit
