@@ -30,7 +30,7 @@ module RemoteOverflowReporter
     end
 
     def raw_feed
-      @raw_feed ||= open(url)
+      @raw_feed ||= Net::HTTP.get(url)
     end
 
     def parsed_feed
@@ -42,4 +42,5 @@ module RemoteOverflowReporter
 end
 
 require 'rss'
-require 'open-uri'
+require 'net/http'
+
