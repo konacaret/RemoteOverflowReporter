@@ -1,4 +1,4 @@
-module RemoteOverflowReporter
+module OverflowReporter
 
   class JobListSummary
     attr_reader :listings, :limit

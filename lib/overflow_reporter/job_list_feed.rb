@@ -1,4 +1,4 @@
-module RemoteOverflowReporter
+module OverflowReporter
 
   class JobListFeed
     attr_reader :listings, :url

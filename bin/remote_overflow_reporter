@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'RemoteOverflowReporter'
-
-RemoteOverflowReporter::CLI.start(ARGV)

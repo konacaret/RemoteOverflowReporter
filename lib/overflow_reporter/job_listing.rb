@@ -1,4 +1,4 @@
-module RemoteOverflowReporter
+module OverflowReporter
 
   class JobListing
     attr_reader :categories, :description, :link, :pub_date, :source, :title

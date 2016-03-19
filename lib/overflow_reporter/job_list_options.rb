@@ -1,4 +1,4 @@
-module RemoteOverflowReporter
+module OverflowReporter
 
   class JobListOptions
     attr_reader :options

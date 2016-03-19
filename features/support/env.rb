@@ -1,7 +1,7 @@
 require 'aruba/cucumber'
 require 'vcr'
 require 'webmock'
-require 'RemoteOverflowReporter'
+require 'overflow_reporter'
 require 'pry'
 
 VCR.cucumber_tags do |t|
@@ -22,7 +22,7 @@ class VcrFriendlyMain
   def execute!
     $stdin   = @stdin
     $stdout  = @stdout
-    RemoteOverflowReporter::CLI.start(@argv)
+    OverflowReporter::CLI.start(@argv)
   end
 end
 

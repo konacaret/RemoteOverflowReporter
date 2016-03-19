@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'overflow_reporter'
+
+OverflowReporter::CLI.start(ARGV)

@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'RemoteOverflowReporter'
+require 'overflow_reporter'
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 if RUBY_VERSION < '1.9.3'

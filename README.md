@@ -1,11 +1,11 @@
-# RemoteOverflowReporter
+# OverflowReporter
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'RemoteOverflowReporter'
+gem 'overflow_reporter'
 ```
 
 And then execute:
@@ -14,13 +14,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install RemoteOverflowReporter
+    $ gem install overflow_reporter
 
 ## Usage
 
 E.g.,
 ```bash
-$ bundle exec remote_overflow_reporter -l "San Francisco, CA" -r 20 -R -L5
+$ bundle exec overflow_reporter -l "San Francisco, CA" -r 20 -R -L5
  category                     | count | appearance %
 ------------------------------+-------+--------------
  javascript                   | 79    | 30%
@@ -35,7 +35,7 @@ displaying top 5 categories
 
 For detailed usage instructions, run the following command:
 
-    $ bundle exec remote_overflow_reporter --help
+    $ bundle exec overflow_reporter --help
 
 ## Development
 
@@ -45,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/RemoteOverflowReporter/fork )
+1. Fork it ( https://github.com/[my-github-username]/overflow_reporter/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
