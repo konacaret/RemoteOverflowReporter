@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/konacaret/overflow_reporter.svg?branch=master)](https://travis-ci.org/konacaret/overflow_reporter)
+[![Build Status](https://travis-ci.org/konacaret/overflow_reporter.svg?branch=master)](https://travis-ci.org/konacaret/overflow_reporter) [![Code Climate](https://codeclimate.com/github/konacaret/overflow_reporter/badges/gpa.svg)](https://codeclimate.com/github/konacaret/overflow_reporter)
 # OverflowReporter 
 
 ## Installation
