@@ -1,4 +1,3 @@
-
 module RemoteOverflowReporter
 
   class JobListOptions
@@ -8,7 +7,7 @@ module RemoteOverflowReporter
       @options = params
     end
 
-    def self.build_from_command_line_options
+    def self.build_from_command_line_options(argv)
       parsed_options = self.new
 
       
@@ -42,7 +41,7 @@ module RemoteOverflowReporter
           exit
         end
 
-      end.parse!
+      end.parse!(argv)
 
       parsed_options
 
