@@ -64,7 +64,7 @@ module RemoteOverflowReporter
 
     def print_footer
       puts "\ntotal number of listings: #{listing_count.to_i}"
-      puts "displaying top #{limit} listings" if limit
+      puts "displaying top #{limit} categories" if limit
     end
 
   end

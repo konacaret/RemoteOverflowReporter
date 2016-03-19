@@ -32,7 +32,7 @@ total number of listings: 8
     Then the output should contain:
     """
 total number of listings: 1000
-displaying top 25 listings
+displaying top 25 categories
     """
 
   @vcr

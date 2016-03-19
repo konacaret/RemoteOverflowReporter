@@ -30,7 +30,7 @@ $ bundle exec remote_overflow_reporter -l "San Francisco, CA" -r 20 -R -L5
  php                          | 30    | 11%
 
 total number of listings: 263
-displaying top 5 listings
+displaying top 5 categories
 ```
 
 For detailed usage instructions, run the following command:
