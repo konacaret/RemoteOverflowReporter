@@ -1,4 +1,5 @@
-# OverflowReporter
+[![Build Status](https://travis-ci.org/konacaret/overflow_reporter.svg?branch=master)](https://travis-ci.org/konacaret/overflow_reporter)
+# OverflowReporter 
 
 ## Installation
 
