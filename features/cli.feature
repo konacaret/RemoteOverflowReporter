@@ -40,7 +40,7 @@ displaying top 25 categories
     When I run `overflow_reporter -l"San Francisco, CA"`
     Then the output should contain:
     """
-total number of listings: 211
+total number of listings: 225
     """
 
   @vcr
@@ -48,7 +48,7 @@ total number of listings: 211
     When I run `overflow_reporter -l"San Francisco, CA" -r5`
     Then the output should contain:
     """
-total number of listings: 199
+total number of listings: 193
     """
 
   @vcr
@@ -56,5 +56,5 @@ total number of listings: 199
     When I run `overflow_reporter -R`
     Then the output should contain:
     """
-total number of listings: 361
+total number of listings: 260
     """

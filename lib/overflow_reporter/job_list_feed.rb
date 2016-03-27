@@ -18,7 +18,7 @@ module OverflowReporter
   private
     def self.build_url(params)
       query   = URI.encode_www_form(params)
-      URI::HTTP.build(host: "careers.stackoverflow.com", path: "/jobs/feed", query: query)
+      URI::HTTP.build(host: "stackoverflow.com", path: "/jobs/feed", query: query)
     end
 
     def self.extract_query_params_from_options(job_list_options)
